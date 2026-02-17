@@ -51,7 +51,7 @@ public class SLinkedList<T> implements Iterable<T> {
         Node<T> newNode = new Node<>(data);
         newNode.next = head;
         head = newNode;
-        tail = newNode;
+        if (tail == null) tail = newNode;
         size++;
     }
 
@@ -62,6 +62,7 @@ public class SLinkedList<T> implements Iterable<T> {
             tail = newNode;
         } else {
             tail.next = newNode;
+            tail = newNode;
         }
         size++;
     }
